@@ -23,4 +23,6 @@ public class Kitchen {
     private String workDays;
     private String workTime;
 
+    public void add(){}
+
 }
