@@ -6,6 +6,9 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
 import java.util.Date;
 import java.util.List;
 
@@ -34,14 +37,29 @@ public class Kitchen {
             generator = "kitchen_sequence"
     )
     private Long kitchenId;
+    
+    @NotNull(message = "Please provide a name for your Kitchen")
     private String kitchenName;
+    
+    @NotNull(message = "Email is required")
     private String kitchenEmail;
+    
+    @NotNull
+    @Size(min = 8, message = "Password must be at least 8 characters")
     private String kitchenPassword;
     // TODO: figure out how to store image in sql database
+    
+    @NotNull(message = "Kitchen Image is Required")
     private String kitchenImage;
+    
+    @NotNull(message = "Working Days are Required")
     private String workDays; // "1110001"
+    
+    @NotNull
     @Temporal(TemporalType.TIME)
     private Date workStartTime;
+    
+    @NotNull
     @Temporal(TemporalType.TIME)
     private Date workEndTime;
 
