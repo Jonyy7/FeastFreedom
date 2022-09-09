@@ -23,10 +23,10 @@ class KitchenServiceImplTest {
     @Autowired
     private KitchenServiceImpl kitchenService;
 
-    @Test
-    public void testServiceSaveKitchenWithMenu() throws ParseException {
-        kitchenService.saveKitchenWithMenu();
-    }
+//    @Test
+//    public void testServiceSaveKitchenWithMenu() throws ParseException {
+//        kitchenService.saveKitchenWithMenu();
+//    }
 
     @Test
     public List<Kitchen> testServiceFindAllKitchen(){

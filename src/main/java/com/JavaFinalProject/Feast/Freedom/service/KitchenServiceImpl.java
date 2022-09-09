@@ -19,56 +19,56 @@ public class KitchenServiceImpl {
     @Autowired
     KitchenRepository kitchenRepo;
 
-    void saveKitchenWithMenu() throws ParseException {
+    public void saveKitchenWithMenu(Kitchen kitchen) throws ParseException {
 
-        Menu menu1 = Menu.builder()
-                .menuName("Beef Noodle")
-                .vegetarian("no")
-                .menuPrice(13.25)
-                .build();
+//        Menu menu1 = Menu.builder()
+//                .menuName("Beef Noodle")
+//                .vegetarian("no")
+//                .menuPrice(13.25)
+//                .build();
+//
+//        Menu menu2 = Menu.builder()
+//                .menuName("Prawn Noodle")
+//                .vegetarian("no")
+//                .menuPrice(13.25)
+//                .build();
+//
+//        DateFormat sdf = new SimpleDateFormat("hh:mm aa");
+//
+//        String startTimeStr = "09:30 am";
+//        String endTimeStr = "5:30 pm";
+//
+//        Date startTime = sdf.parse(startTimeStr);
+//        Date endTime = sdf.parse(endTimeStr);
+//
+//        Kitchen kitchen1 = Kitchen.builder()
+//                .kitchenName("Hell's Kitchen II")
+//                .kitchenEmail("hellskitchenII@gmail.com")
+//                .kitchenPassword("password")
+//                .kitchenImage("img_4")
+//                .workDays("0111110")
+//                .workStartTime(startTime)
+//                .workEndTime(endTime)
+//                .menus(Arrays.asList(menu1, menu2))
+//                .build();
 
-        Menu menu2 = Menu.builder()
-                .menuName("Prawn Noodle")
-                .vegetarian("no")
-                .menuPrice(13.25)
-                .build();
-
-        DateFormat sdf = new SimpleDateFormat("hh:mm aa");
-
-        String startTimeStr = "09:30 am";
-        String endTimeStr = "5:30 pm";
-
-        Date startTime = sdf.parse(startTimeStr);
-        Date endTime = sdf.parse(endTimeStr);
-
-        Kitchen kitchen1 = Kitchen.builder()
-                .kitchenName("Hell's Kitchen")
-                .kitchenEmail("hellskitchen@gmail.com")
-                .kitchenPassword("password")
-                .kitchenImage("img_3")
-                .workDays("0111110")
-                .workStartTime(startTime)
-                .workEndTime(endTime)
-                .menus(Arrays.asList(menu1, menu2))
-                .build();
-
-        kitchenRepo.save(kitchen1);
+        kitchenRepo.save(kitchen);
 
     }
 
-    List<Kitchen> findAllKitchen(){
+    public List<Kitchen> findAllKitchen(){
         return kitchenRepo.findAll();
     }
 
-    Kitchen findKitchenById(Long id){
+    public Kitchen findKitchenById(Long id){
         return kitchenRepo.findById(id).get();
     }
 
-    void updateKitchenNameandEmailById(String name, String email, Long id){
+    public void updateKitchenNameandEmailById(String name, String email, Long id){
         kitchenRepo.updateKitchenNameAndEmailById(name, email, id);
     }
 
-    void deleteKitchen(Long id){
+    public void deleteKitchen(Long id){
         kitchenRepo.deleteById(id);
     }
 

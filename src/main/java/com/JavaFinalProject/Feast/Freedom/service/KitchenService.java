@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface KitchenService {
 
-    void saveKitchenWithMenu();
+    void saveKitchenWithMenu(Kitchen kitchen);
 
     List<Kitchen> findAllKitchen();
 
