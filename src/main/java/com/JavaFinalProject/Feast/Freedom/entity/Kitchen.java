@@ -7,12 +7,19 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.List;
 
-//@Entity
+@Entity
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
+@Table(
+        uniqueConstraints = @UniqueConstraint(
+                name = "kitchenEmail_unique",
+                columnNames = "kitchenEmail"
+        )
+)
 public class Kitchen {
 
 
@@ -26,16 +33,24 @@ public class Kitchen {
             strategy = GenerationType.SEQUENCE,
             generator = "kitchen_sequence"
     )
-    private Long id;
-    private String name;
-    private String email;
-    private String password;
+    private Long kitchenId;
+    private String kitchenName;
+    private String kitchenEmail;
+    private String kitchenPassword;
     // TODO: figure out how to store image in sql database
-    private String image;
+    private String kitchenImage;
     private String workDays; // "1110001"
     @Temporal(TemporalType.TIME)
     private Date workStartTime;
     @Temporal(TemporalType.TIME)
     private Date workEndTime;
 
+    @OneToMany(
+            cascade = CascadeType.ALL
+    )
+    @JoinColumn(
+            name = "kitchen_id",
+            referencedColumnName = "kitchenId"
+    )
+    private List<Menu> menus;
 }
