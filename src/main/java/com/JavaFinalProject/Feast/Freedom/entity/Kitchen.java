@@ -9,7 +9,6 @@ import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
-import java.util.Date;
 import java.util.List;
 
 @Entity
@@ -48,19 +47,9 @@ public class Kitchen {
     
     @NotNull(message = "Working Days are Required")
     private String workDays; // "1110001"
-<<<<<<< HEAD
+
     private String workStartTime;
     private String workEndTime;
-=======
-    
-    @NotNull
-    @Temporal(TemporalType.TIME)
-    private Date workStartTime;
-    
-    @NotNull
-    @Temporal(TemporalType.TIME)
-    private Date workEndTime;
->>>>>>> 2e90ae7f27d1012c156a816bb631ea5b68f2ded8
 
     @OneToMany(
             cascade = CascadeType.ALL,
