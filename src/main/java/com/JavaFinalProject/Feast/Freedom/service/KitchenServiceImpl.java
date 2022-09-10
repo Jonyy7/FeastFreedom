@@ -19,7 +19,8 @@ public class KitchenServiceImpl {
     @Autowired
     KitchenRepository kitchenRepo;
 
-    public void saveKitchenWithMenu(Kitchen kitchen) throws ParseException {
+    // TODO: add additional parameters for creating kitchen, , String startTimeStr, String endTimeStr
+    public void saveKitchenWithMenu(Kitchen kitchen) {
 
 //        Menu menu1 = Menu.builder()
 //                .menuName("Beef Noodle")
@@ -32,15 +33,15 @@ public class KitchenServiceImpl {
 //                .vegetarian("no")
 //                .menuPrice(13.25)
 //                .build();
-//
+
 //        DateFormat sdf = new SimpleDateFormat("hh:mm aa");
 //
-//        String startTimeStr = "09:30 am";
-//        String endTimeStr = "5:30 pm";
+//        String startTimeStr = "11:30 am";
+//        String endTimeStr = "6:30 pm";
 //
 //        Date startTime = sdf.parse(startTimeStr);
 //        Date endTime = sdf.parse(endTimeStr);
-//
+
 //        Kitchen kitchen1 = Kitchen.builder()
 //                .kitchenName("Hell's Kitchen II")
 //                .kitchenEmail("hellskitchenII@gmail.com")

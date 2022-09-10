@@ -22,7 +22,7 @@ class KitchenRepositoryTest {
     private KitchenRepository kitchenRepo;
 
     @Test
-    public void saveKitchenWithMenu() throws ParseException {
+    public void saveKitchenWithMenu() {
 
         Menu menu1 = Menu.builder()
                 .menuName("Beef Noodle")
@@ -36,13 +36,13 @@ class KitchenRepositoryTest {
                 .menuPrice(13.25)
                 .build();
 
-        DateFormat sdf = new SimpleDateFormat("hh:mm aa");
+//        DateFormat sdf = new SimpleDateFormat("hh:mm aa");
 
-        String startTimeStr = "08:15 am";
-        String endTimeStr = "4:30 pm";
-
-        Date startTime = sdf.parse(startTimeStr);
-        Date endTime = sdf.parse(endTimeStr);
+//        String startTimeStr = "08:15 am";
+//        String endTimeStr = "4:30 pm";
+//
+//        Date startTime = sdf.parse(startTimeStr);
+//        Date endTime = sdf.parse(endTimeStr);
 
         Kitchen kitchen1 = Kitchen.builder()
                 .kitchenName("Panda Express")
@@ -50,8 +50,8 @@ class KitchenRepositoryTest {
                 .kitchenPassword("password")
                 .kitchenImage("img_1")
                 .workDays("1111100")
-                .workStartTime(startTime)
-                .workEndTime(endTime)
+                .workStartTime("08:15 am")
+                .workEndTime("4:30 pm")
                 .menus(Arrays.asList(menu1, menu2))
                 .build();
 
@@ -98,7 +98,7 @@ class KitchenRepositoryTest {
 
     @Test
     public void findKitchenById(){
-        Kitchen kitchen = kitchenRepo.findById(1L).get();
+        Kitchen kitchen = kitchenRepo.findById(2L).get();
 
         System.out.println("kitchen = " + kitchen);
 
@@ -111,7 +111,7 @@ class KitchenRepositoryTest {
 
     @Test
     public void deleteKitchen(){
-        kitchenRepo.deleteById(3L);
+        kitchenRepo.deleteById(1L);
     }
 
 

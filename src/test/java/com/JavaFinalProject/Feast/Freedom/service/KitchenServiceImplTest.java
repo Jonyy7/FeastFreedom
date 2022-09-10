@@ -28,24 +28,49 @@ class KitchenServiceImplTest {
 //        kitchenService.saveKitchenWithMenu();
 //    }
 
-    @Test
-    public List<Kitchen> testServiceFindAllKitchen(){
-        return kitchenService.findAllKitchen();
-    }
+    /**
+     * error: No tests were found
+     * possible reason: doesn't consider it to be a test method unless the return type is
+     * void
+     */
+//    @Test
+//    public List<Kitchen> testServiceFindAllKitchen(){
+//        return kitchenService.findAllKitchen();
+//    }
+
 
     @Test
-    public Kitchen testServiceFindKitchenById(){
-        return kitchenService.findKitchenById(1L);
+    public void testServiceFindAllKitchen(){
+        List<Kitchen> kitchens  = kitchenService.findAllKitchen();
+
+        System.out.println("kitchens = " + kitchens);
     }
+
+    /**
+     * error: No tests were found
+     * possible reason: doesn't consider it to be a test method unless the return type is
+     * void
+     */
+//    @Test
+//    public Kitchen testServiceFindKitchenById(){
+//        return kitchenService.findKitchenById(2L);
+//    }
+
+    @Test
+    public void testServiceFindKitchenById(){
+        Kitchen kitchen = kitchenService.findKitchenById(2L);
+        System.out.println("kitchen = " + kitchen);
+    }
+
 
     @Test
     public void testServiceUpdateKitchenNameAndEmailById(){
-        kitchenService.updateKitchenNameandEmailById("Marian's Kitchen", "marianskitchen@gmail.com", 1L);
+        kitchenService.updateKitchenNameandEmailById("PandaExpressss", "PandaExpressss@gmail.com", 8L);
     }
 
     @Test
     public void testServiceDeleteKitchen(){
-        kitchenService.deleteKitchen(3L);
+        kitchenService.deleteKitchen(4L);
     }
 
 

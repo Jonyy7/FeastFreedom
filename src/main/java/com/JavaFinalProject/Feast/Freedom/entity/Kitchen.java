@@ -14,12 +14,6 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-@Table(
-        uniqueConstraints = @UniqueConstraint(
-                name = "kitchenEmail_unique",
-                columnNames = "kitchenEmail"
-        )
-)
 public class Kitchen {
 
 
@@ -40,13 +34,12 @@ public class Kitchen {
     // TODO: figure out how to store image in sql database
     private String kitchenImage;
     private String workDays; // "1110001"
-    @Temporal(TemporalType.TIME)
-    private Date workStartTime;
-    @Temporal(TemporalType.TIME)
-    private Date workEndTime;
+    private String workStartTime;
+    private String workEndTime;
 
     @OneToMany(
-            cascade = CascadeType.ALL
+            cascade = CascadeType.ALL,
+            fetch = FetchType.EAGER
     )
     @JoinColumn(
             name = "kitchen_id",
