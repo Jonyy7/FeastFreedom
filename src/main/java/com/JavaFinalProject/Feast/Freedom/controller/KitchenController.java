@@ -1,11 +1,14 @@
 package com.JavaFinalProject.Feast.Freedom.controller;
 
 import com.JavaFinalProject.Feast.Freedom.entity.Kitchen;
+import com.JavaFinalProject.Feast.Freedom.service.ImageServiceImpl;
 import com.JavaFinalProject.Feast.Freedom.service.KitchenServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.text.ParseException;
 import java.util.List;
@@ -16,6 +19,9 @@ public class KitchenController {
 
     @Autowired
     private KitchenServiceImpl kitchenService;
+
+    @Autowired
+    private ImageServiceImpl imageService;
 
 
     @GetMapping("/get-kitchens")
@@ -55,9 +61,16 @@ public class KitchenController {
         kitchenService.deleteKitchen(id);
     }
 
-    // TODO: might need a separate api to upload image
 
-
+    @PostMapping(
+            path = "/upload-image/{id}",
+            consumes = MediaType.MULTIPART_FORM_DATA_VALUE,
+            produces = MediaType.APPLICATION_JSON_VALUE
+    )
+    public void uploadImage(@PathVariable long id,
+                                          @RequestParam("file") MultipartFile file) {
+        imageService.uploadImage(id, file);
+    }
 
 
 
