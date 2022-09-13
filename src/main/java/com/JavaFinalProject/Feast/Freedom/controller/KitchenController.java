@@ -1,5 +1,6 @@
 package com.JavaFinalProject.Feast.Freedom.controller;
 
+<<<<<<< HEAD
 import com.JavaFinalProject.Feast.Freedom.entity.Image;
 import com.JavaFinalProject.Feast.Freedom.entity.Kitchen;
 import com.JavaFinalProject.Feast.Freedom.service.ImageServiceImpl;
@@ -10,6 +11,14 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
+=======
+import com.JavaFinalProject.Feast.Freedom.entity.Kitchen;
+import com.JavaFinalProject.Feast.Freedom.service.KitchenServiceImpl;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+>>>>>>> 5a35152960ab151ecaf322a9f5c0ebf1f7242402
 
 import java.text.ParseException;
 import java.util.List;
@@ -21,9 +30,12 @@ public class KitchenController {
     @Autowired
     private KitchenServiceImpl kitchenService;
 
+<<<<<<< HEAD
     @Autowired
     private ImageServiceImpl imageService;
 
+=======
+>>>>>>> 5a35152960ab151ecaf322a9f5c0ebf1f7242402
 
     @GetMapping("/get-kitchens")
     public List<Kitchen> getAllKitchen(){
@@ -47,7 +59,11 @@ public class KitchenController {
     @PutMapping("/update-kitchen/{id}")
     public ResponseEntity<Kitchen> updateKitchen(@RequestBody Kitchen kitchenDetails, @PathVariable long id){
         try{
+<<<<<<< HEAD
 //            Kitchen existKitchen = kitchenService.findKitchenById(id);
+=======
+            Kitchen existKitchen = kitchenService.findKitchenById(id);
+>>>>>>> 5a35152960ab151ecaf322a9f5c0ebf1f7242402
 
             kitchenDetails.setKitchenId(id);
             kitchenService.saveKitchenWithMenu(kitchenDetails);
@@ -62,6 +78,7 @@ public class KitchenController {
         kitchenService.deleteKitchen(id);
     }
 
+<<<<<<< HEAD
 
     @PostMapping(
             path = "/upload-image/{id}",
@@ -80,6 +97,11 @@ public class KitchenController {
 //    public Image getImageById(@PathVariable long id){
 //        return imageService.getImageByKitchenId(id);
 //    }
+=======
+    // TODO: might need a separate api to upload image
+
+
+>>>>>>> 5a35152960ab151ecaf322a9f5c0ebf1f7242402
 
 
 

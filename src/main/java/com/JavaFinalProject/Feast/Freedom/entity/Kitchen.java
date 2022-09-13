@@ -30,7 +30,6 @@ public class Kitchen {
             generator = "kitchen_sequence"
     )
     private Long kitchenId;
-
     @NotNull(message = "Please provide a name for your Kitchen")
     private String kitchenName;
     
@@ -60,5 +59,4 @@ public class Kitchen {
             referencedColumnName = "kitchenId"
     )
     private List<Menu> menus;
-
 }

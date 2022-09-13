@@ -7,7 +7,6 @@ import java.util.List;
 
 public interface KitchenService {
 
-    // , String startTimeStr, String endTimeStr
     void saveKitchenWithMenu(Kitchen kitchen);
 
     List<Kitchen> findAllKitchen();
