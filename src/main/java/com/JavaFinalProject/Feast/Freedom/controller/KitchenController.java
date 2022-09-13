@@ -1,5 +1,10 @@
 package com.JavaFinalProject.Feast.Freedom.controller;
 
+<<<<<<< Updated upstream
+=======
+
+import com.JavaFinalProject.Feast.Freedom.entity.Image;
+>>>>>>> Stashed changes
 import com.JavaFinalProject.Feast.Freedom.entity.Kitchen;
 import com.JavaFinalProject.Feast.Freedom.service.ImageServiceImpl;
 import com.JavaFinalProject.Feast.Freedom.service.KitchenServiceImpl;
@@ -9,6 +14,10 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
 
 import java.text.ParseException;
 import java.util.List;
@@ -46,7 +55,12 @@ public class KitchenController {
     @PutMapping("/update-kitchen/{id}")
     public ResponseEntity<Kitchen> updateKitchen(@RequestBody Kitchen kitchenDetails, @PathVariable long id){
         try{
+<<<<<<< Updated upstream
             Kitchen existKitchen = kitchenService.findKitchenById(id);
+=======
+
+//            Kitchen existKitchen = kitchenService.findKitchenById(id);
+>>>>>>> Stashed changes
 
             kitchenDetails.setKitchenId(id);
             kitchenService.saveKitchenWithMenu(kitchenDetails);
@@ -61,7 +75,10 @@ public class KitchenController {
         kitchenService.deleteKitchen(id);
     }
 
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
     @PostMapping(
             path = "/upload-image/{id}",
             consumes = MediaType.MULTIPART_FORM_DATA_VALUE,
@@ -72,10 +89,20 @@ public class KitchenController {
         imageService.uploadImage(id, file);
     }
 
+<<<<<<< Updated upstream
 
 
 
 
 
+=======
+//    @PostMapping(
+//            path = "/image/{id}",
+//            produces = MediaType.APPLICATION_JSON_VALUE
+//    )
+//    public Image getImageById(@PathVariable long id){
+//        return imageService.getImageByKitchenId(id);
+//    }
+>>>>>>> Stashed changes
 
 }
