@@ -14,7 +14,6 @@ import java.io.IOException;
 import java.util.*;
 
 import static org.apache.http.entity.ContentType.*;
-import static org.apache.http.entity.ContentType.IMAGE_JPEG;
 
 @AllArgsConstructor
 @Service

@@ -25,18 +25,14 @@ import java.util.List;
 import java.util.NoSuchElementException;
 
 @RestController
+@CrossOrigin("http://localhost:4200")
 public class KitchenController {
 
     @Autowired
     private KitchenServiceImpl kitchenService;
-
-
+    
     @Autowired
     private ImageServiceImpl imageService;
-
-    @Autowired
-    private ImageServiceImpl imageService;
-
 
     @GetMapping("/get-kitchens")
     public List<Kitchen> getAllKitchen(){

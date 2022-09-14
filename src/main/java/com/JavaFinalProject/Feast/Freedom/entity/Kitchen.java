@@ -41,9 +41,6 @@ public class Kitchen {
     @Size(min = 8, message = "Password must be at least 8 characters")
     private String kitchenPassword;
     
-//    @NotNull(message = "Kitchen Image is Required")
-//    private String kitchenImage;
-    
     @NotNull(message = "Working Days are Required")
     private String workDays; // "1110001"
 

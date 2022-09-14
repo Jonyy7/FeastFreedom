@@ -21,7 +21,7 @@ import com.JavaFinalProject.Feast.Freedom.entity.JwtRequest;
 import com.JavaFinalProject.Feast.Freedom.entity.JwtResponse;
 
 @RestController
-@CrossOrigin
+@CrossOrigin("http://localhost:4200")
 public class JwtAuthenticationController {
 	@Autowired
 	private AuthenticationManager authenticationManager;
@@ -31,7 +31,8 @@ public class JwtAuthenticationController {
 
 	@Autowired
 	private UserDetailsService jwtInMemoryUserDetailsService;
-	
+
+
 	@RequestMapping(value = "/authenticate", method = RequestMethod.POST)
 	public ResponseEntity<?> generateAuthenticationToken(@RequestBody JwtRequest authenticationRequest)
 			throws Exception {

@@ -17,6 +17,4 @@ public interface KitchenService {
 
     void deleteKitchen(Long id);
 
-    void uploadImage(Long id, MultipartFile file);
-
 }
