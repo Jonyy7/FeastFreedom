@@ -1,6 +1,9 @@
 package com.JavaFinalProject.Feast.Freedom.service;
 
 import com.JavaFinalProject.Feast.Freedom.entity.Kitchen;
+
+import com.JavaFinalProject.Feast.Freedom.repository.ImageRepository;
+
 import com.JavaFinalProject.Feast.Freedom.repository.KitchenRepository;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
@@ -72,11 +75,5 @@ class KitchenServiceImplTest {
     public void testServiceDeleteKitchen(){
         kitchenService.deleteKitchen(4L);
     }
-
-
-
-
-
-
 
 }

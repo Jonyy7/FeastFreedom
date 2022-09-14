@@ -7,4 +7,6 @@ public interface ImageService {
 
     void uploadImage(Long id, MultipartFile file);
 
+//    Image getImageByKitchenId(Long id);
+
 }

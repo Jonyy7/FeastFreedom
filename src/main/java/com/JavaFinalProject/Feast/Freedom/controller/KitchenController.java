@@ -1,10 +1,7 @@
 package com.JavaFinalProject.Feast.Freedom.controller;
 
-<<<<<<< Updated upstream
-=======
 
 import com.JavaFinalProject.Feast.Freedom.entity.Image;
->>>>>>> Stashed changes
 import com.JavaFinalProject.Feast.Freedom.entity.Kitchen;
 import com.JavaFinalProject.Feast.Freedom.service.ImageServiceImpl;
 import com.JavaFinalProject.Feast.Freedom.service.KitchenServiceImpl;
@@ -14,6 +11,15 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
+import com.JavaFinalProject.Feast.Freedom.entity.Kitchen;
+import com.JavaFinalProject.Feast.Freedom.service.ImageServiceImpl;
+import com.JavaFinalProject.Feast.Freedom.service.KitchenServiceImpl;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
 
 import java.util.List;
 import java.util.NoSuchElementException;
@@ -23,6 +29,10 @@ public class KitchenController {
 
     @Autowired
     private KitchenServiceImpl kitchenService;
+
+
+    @Autowired
+    private ImageServiceImpl imageService;
 
     @Autowired
     private ImageServiceImpl imageService;
@@ -50,7 +60,7 @@ public class KitchenController {
     @PutMapping("/update-kitchen/{id}")
     public ResponseEntity<Kitchen> updateKitchen(@RequestBody Kitchen kitchenDetails, @PathVariable long id){
         try{
-            Kitchen existKitchen = kitchenService.findKitchenById(id);
+//            Kitchen existKitchen = kitchenService.findKitchenById(id);
 
             kitchenDetails.setKitchenId(id);
             kitchenService.saveKitchenWithMenu(kitchenDetails);
@@ -74,7 +84,6 @@ public class KitchenController {
                                           @RequestParam("file") MultipartFile file) {
         imageService.uploadImage(id, file);
     }
-
 
 //    @PostMapping(
 //            path = "/image/{id}",

@@ -8,4 +8,6 @@ import org.springframework.stereotype.Repository;
 public interface ImageRepository extends JpaRepository<Image, Long> {
 
 //    Image findByTitle(String title);  // TODO: change to find by kitchen_id
+
+//    Image findByKitchenId(Long id);  // find the image that has the given kitchen id
 }

@@ -48,7 +48,6 @@ class KitchenRepositoryTest {
                 .kitchenName("Panda Express")
                 .kitchenEmail("pandaexpress@gmail.com")
                 .kitchenPassword("password")
-                .kitchenImage("img_1")
                 .workDays("1111100")
                 .workStartTime("08:15 am")
                 .workEndTime("4:30 pm")

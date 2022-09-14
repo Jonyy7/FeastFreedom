@@ -70,5 +70,9 @@ public class ImageServiceImpl implements ImageService{
 
     }
 
+//    public Image getImageByKitchenId(Long id){
+//        return imageRepo.findByKitchenId(id);
+//    }
+
 
 }

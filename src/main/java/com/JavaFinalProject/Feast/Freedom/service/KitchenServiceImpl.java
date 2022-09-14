@@ -32,6 +32,34 @@ public class KitchenServiceImpl {
     @Autowired
     ImageRepository imageRepo;
 
+
+import com.JavaFinalProject.Feast.Freedom.entity.Kitchen;
+import com.JavaFinalProject.Feast.Freedom.entity.Menu;
+import com.JavaFinalProject.Feast.Freedom.repository.ImageRepository;
+import com.JavaFinalProject.Feast.Freedom.repository.KitchenRepository;
+import lombok.AllArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
+
+import java.io.IOException;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.*;
+
+import static org.apache.http.entity.ContentType.*;
+import static org.apache.http.entity.ContentType.IMAGE_JPEG;
+
+@AllArgsConstructor
+@Service
+public class KitchenServiceImpl {
+
+    private final FileStore fileStore;
+
+    @Autowired
+    KitchenRepository kitchenRepo;
+
     public void saveKitchenWithMenu(Kitchen kitchen) {
 
 //        Menu menu1 = Menu.builder()

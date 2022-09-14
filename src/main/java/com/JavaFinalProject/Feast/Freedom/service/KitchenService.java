@@ -7,7 +7,6 @@ import java.util.List;
 
 public interface KitchenService {
 
-    // , String startTimeStr, String endTimeStr
     void saveKitchenWithMenu(Kitchen kitchen);
 
     List<Kitchen> findAllKitchen();
@@ -18,6 +17,6 @@ public interface KitchenService {
 
     void deleteKitchen(Long id);
 
-//    void uploadImage(Long id, MultipartFile file);
+    void uploadImage(Long id, MultipartFile file);
 
 }

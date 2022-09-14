@@ -40,10 +40,9 @@ public class Kitchen {
     @NotNull
     @Size(min = 8, message = "Password must be at least 8 characters")
     private String kitchenPassword;
-    // TODO: figure out how to store image in sql database
     
-    @NotNull(message = "Kitchen Image is Required")
-    private String kitchenImage;
+//    @NotNull(message = "Kitchen Image is Required")
+//    private String kitchenImage;
     
     @NotNull(message = "Working Days are Required")
     private String workDays; // "1110001"
